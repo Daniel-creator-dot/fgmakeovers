@@ -480,7 +480,7 @@ main {
 
 /* Services Grid Section */
 .services-section {
-    padding: 80px 0;
+    padding: 80px 24px;
 }
 
 .services-grid {
@@ -710,7 +710,7 @@ main {
 
 /* Portfolio / Showcase Grid */
 .showcase-section {
-    padding: 80px 0;
+    padding: 80px 24px;
 }
 
 .showcase-grid {
@@ -1999,7 +1999,7 @@ select.form-control {
    16. Welcome & Why Choose Us Sections
    ========================================================================== */
 .welcome-section {
-    padding: 100px 0;
+    padding: 100px 24px;
     background-color: var(--color-bg-primary);
 }
 
@@ -2065,7 +2065,7 @@ select.form-control {
 }
 
 .why-choose-us-section {
-    padding: 100px 0;
+    padding: 100px 24px;
     background-color: var(--color-bg-secondary);
     border-radius: var(--border-radius-lg);
     margin-bottom: 100px;
@@ -2138,27 +2138,67 @@ select.form-control {
     }
     .why-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 24px;
+        gap: 32px;
     }
 }
 
 @media (max-width: 768px) {
     .welcome-section,
     .why-choose-us-section {
-        padding: 60px 0;
+        padding: 60px 24px;
     }
     .why-choose-us-section {
         margin-bottom: 60px;
     }
+    .services-section,
+    .showcase-section {
+        padding: 60px 24px;
+    }
+    .welcome-text {
+        text-align: center;
+    }
+    .section-divider-left {
+        margin: 16px auto 24px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .welcome-lead {
+        font-size: 1.15rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
+    }
+    .welcome-body {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    .welcome-closing {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .welcome-section,
+    .why-choose-us-section {
+        padding: 50px 16px;
+    }
+    .services-section,
+    .showcase-section {
+        padding: 50px 16px;
+    }
     .why-grid {
         grid-template-columns: 1fr;
         gap: 24px;
     }
     .welcome-image-wrapper {
-        height: 300px;
+        height: 280px;
+    }
+    .section-title {
+        font-size: 1.75rem;
+    }
+    .welcome-lead {
+        font-size: 1.1rem;
     }
 }
 
