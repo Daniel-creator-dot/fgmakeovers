@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FG Makeovers - Flawless. Gorgeous. You. | Premium Makeup Artistry</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="FG Makeovers offers premium makeup artistry, including Bridal Glam, Special Occasion, Editorial, and Private Masterclasses. Book your flawless transformation today.">
+    <meta name="keywords" content="makeup, bridal makeup, beauty, makeovers, FG Makeovers, makeup artist, Accra makeup, wedding makeup, beauty salon">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FG Makeovers - Flawless. Gorgeous. You.">
+    <meta property="og:description" content="Luxury makeup services tailored for you. Book bridal, photoshoot, and special occasion appointments.">
+    <meta property="og:image" content="assets/logo.jpg">
+    <meta property="og:url" content="https://www.fgmakeovers.com">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header" id="header">
+        <div class="header-container">
+            <a href="#/" class="logo-link" id="nav-logo">
+                <img src="assets/logo.jpg" alt="FG Makeovers Logo" class="header-logo">
+                <span class="logo-text">FG MAKEOVERS</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#/" class="nav-link active" data-target="home">Home</a></li>
+                    <li><a href="#/services" class="nav-link" data-target="services">Services</a></li>
+                    <li><a href="#/packages" class="nav-link" data-target="packages">Packages</a></li>
+                    <li><a href="#/gallery" class="nav-link" data-target="gallery">Gallery</a></li>
+                    <li><a href="#/about" class="nav-link" data-target="about">About</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="btn btn-primary btn-book-trigger" id="btn-header-book">Book Appointment</button>
+                <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area (Dynamic Views via Router) -->
+    <main id="app-view">
+        
+        <!-- View: Home -->
+        <section id="view-home" class="page-view active">
+            <!-- Hero Banner -->
+            <section class="hero-section">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-subtitle">Professional Makeup Artistry</span>
+                    <h1 class="hero-title">Flawless. Gorgeous. You.</h1>
+                    <p class="hero-desc">Indulge in a premium beauty experience custom-tailored to enhance your natural grace and radiate absolute confidence.</p>
+                    <div class="hero-ctas">
+                        <a href="#/services" class="btn btn-primary">Explore Services</a>
+                        <button class="btn btn-outline btn-book-trigger">Book Session</button>
+                    </div>
+                </div>
+                <div class="hero-scroll-down">
+                    <a href="#view-home-services" class="scroll-indicator">
+                        <span>Scroll Down</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Welcome Section -->
+            <section class="welcome-section container">
+                <div class="welcome-grid">
+                    <div class="welcome-text">
+                        <span class="section-subtitle">Welcome to F_G Makeovers</span>
+                        <h2 class="section-title">Flawless. Gorgeous. You.</h2>
+                        <div class="section-divider-left"></div>
+                        <p class="welcome-lead">At Flawlessly Gorgeous Makeovers, we believe makeup is more than beauty—it is confidence, elegance, and self-expression.</p>
+                        <p class="welcome-body">Whether you're walking down the aisle, celebrating a milestone, attending a special event, or simply wanting to look your absolute best, we are committed to creating timeless looks that enhance your natural beauty.</p>
+                        <p class="welcome-closing">Every face tells a story, and we are honoured to be part of yours.</p>
+                    </div>
+                    <div class="welcome-image-wrapper">
+                        <img src="assets/images/natural.png" alt="Welcome to F_G Makeovers" class="welcome-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Why Choose Us Section -->
+            <section class="why-choose-us-section container">
+                <div class="section-header">
+                    <span class="section-subtitle">The FG Standard</span>
+                    <h2 class="section-title">Why Choose Us</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-gem"></i></div>
+                        <h3>Luxury Bridal Experience</h3>
+                        <p>Specialized bridal packages that prioritize your comfort, style, and absolute confidence on your big day.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-shield-check"></i></div>
+                        <h3>Professional Hygiene Standards</h3>
+                        <p>We practice the highest sanitation standards for products, brushes, and tools for your safety.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-stars"></i></div>
+                        <h3>Premium Makeup Products</h3>
+                        <p>Using premium, camera-ready and skin-friendly luxury cosmetic brands for flawless durability.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-person-check"></i></div>
+                        <h3>Personalized Makeup Looks</h3>
+                        <p>Custom-tailored styles matching your unique features, bone structure, and outfit aesthetic.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-clock-history"></i></div>
+                        <h3>Reliable & Timely Service</h3>
+                        <p>Prompt arrivals and expert time management so you can relax without stress.</p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-heart-fill"></i></div>
+                        <h3>Client Satisfaction</h3>
+                        <p>A warm, luxurious atmosphere focused entirely on your comfort and absolute satisfaction.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="view-home-services" class="services-section container">
+                <div class="section-header">
+                    <span class="section-subtitle">Featured Services</span>
+                    <h2 class="section-title">What We Offer</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="services-grid" id="services-list-container">
+                    <!-- Service cards dynamically populated by app.js -->
+                </div>
+                <div class="services-cta-row">
+                    <a href="#/services" class="btn btn-outline">View All Services</a>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="section-subtitle">Client Experiences</span>
+                        <h2 class="section-title">What Our Guests Say</h2>
+                        <div class="section-divider"></div>
+                    </div>
+                    
+                    <div class="testimonial-carousel" id="testimonial-carousel">
+                        <div class="carousel-track-container">
+                            <ul class="carousel-track" id="testimonial-track">
+                                <li class="carousel-slide active">
+                                    <div class="testimonial-card">
+                                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                        <p class="testimonial-text">"FG Makeovers did my bridal makeup and it was absolutely stunning! I felt so light, and the finish stayed fresh all day under the cameras. Truly flawless."</p>
+                                        <h4 class="client-name">Kezia A.</h4>
+                                        <span class="client-role">Happy Bride</span>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <div class="testimonial-card">
+                                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                        <p class="testimonial-text">"The private masterclass was worth every single penny. I learned how to identify my undertone and create a soft glam look in minutes. Highly recommended!"</p>
+                                        <h4 class="client-name">Naa Shika</h4>
+                                        <span class="client-role">Masterclass Student</span>
+                                    </div>
+                                </li>
+                                <li class="carousel-slide">
+                                    <div class="testimonial-card">
+                                        <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                        <p class="testimonial-text">"I book FG Makeovers for all my photoshoots. The attention to detail with lighting contrasts and skin texture is next to none. A master of the craft!"</p>
+                                        <h4 class="client-name">Ama O.</h4>
+                                        <span class="client-role">Fashion Model</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="carousel-nav">
+                            <button class="carousel-btn prev-btn" id="carousel-prev"><i class="bi bi-chevron-left"></i></button>
+                            <div class="carousel-dots" id="carousel-dots">
+                                <!-- Dots populated dynamically -->
+                            </div>
+                            <button class="carousel-btn next-btn" id="carousel-next"><i class="bi bi-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Instagram/Showcase Grid -->
+            <section class="showcase-section container">
+                <div class="section-header">
+                    <span class="section-subtitle">Visual Portfolio</span>
+                    <h2 class="section-title">Flawless Creations</h2>
+                    <div class="section-divider"></div>
+                </div>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="assets/images/white_bridal.png" alt="Bridal Look" class="showcase-img">
+                        <div class="showcase-overlay">
+                            <span class="overlay-tag">Bridal Glam</span>
+                            <button class="btn-zoom-gallery" data-img="assets/images/white_bridal.png"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/images/dinner_glam.png" alt="Glam Look" class="showcase-img">
+                        <div class="showcase-overlay">
+                            <span class="overlay-tag">Special Occasion</span>
+                            <button class="btn-zoom-gallery" data-img="assets/images/dinner_glam.png"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/images/editorial.png" alt="Editorial Creative" class="showcase-img">
+                        <div class="showcase-overlay">
+                            <span class="overlay-tag">Editorial High-Fashion</span>
+                            <button class="btn-zoom-gallery" data-img="assets/images/editorial.png"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/images/birthday_glam.png" alt="Natural Radiant Glam" class="showcase-img">
+                        <div class="showcase-overlay">
+                            <span class="overlay-tag">Natural Radiant Glam</span>
+                            <button class="btn-zoom-gallery" data-img="assets/images/birthday_glam.png"><i class="bi bi-plus-circle"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- View: Services Detail SPA -->
+        <section id="view-service-detail" class="page-view container">
+            <!-- Content will be injected dynamically by app.js based on router parameter -->
+        </section>
+
+        <!-- View: Full Services List -->
+        <section id="view-services" class="page-view container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Everything We Do</span>
+                <h2 class="section-title">Our Services Menu</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <!-- Bridal Services Category -->
+            <div class="services-category-group">
+                <div class="services-category-header">
+                    <div class="category-icon-ring"><i class="bi bi-gem"></i></div>
+                    <div>
+                        <h3 class="services-category-title">Bridal Services</h3>
+                        <p class="services-category-desc">Complete wedding day beauty — from your first consultation to the final reception touch-up.</p>
+                    </div>
+                </div>
+                <div class="services-grid list-view" id="all-services-bridal">
+                    <!-- Dynamically rendered by app.js -->
+                </div>
+            </div>
+
+            <!-- Event Makeup Category -->
+            <div class="services-category-group">
+                <div class="services-category-header">
+                    <div class="category-icon-ring"><i class="bi bi-stars"></i></div>
+                    <div>
+                        <h3 class="services-category-title">Event Makeup</h3>
+                        <p class="services-category-desc">Stunning, long-wear looks for every celebration, milestone, and occasion.</p>
+                    </div>
+                </div>
+                <div class="services-grid list-view" id="all-services-event">
+                    <!-- Dynamically rendered by app.js -->
+                </div>
+            </div>
+
+            <!-- Makeup Lessons Category -->
+            <div class="services-category-group">
+                <div class="services-category-header">
+                    <div class="category-icon-ring"><i class="bi bi-mortarboard-fill"></i></div>
+                    <div>
+                        <h3 class="services-category-title">Makeup Lessons</h3>
+                        <p class="services-category-desc">Learn professional techniques from our expert artists — private, group, or full masterclass.</p>
+                    </div>
+                </div>
+                <div class="services-grid list-view" id="all-services-lessons">
+                    <!-- Dynamically rendered by app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- View: Gallery -->
+        <section id="view-gallery" class="page-view container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Stunning Transformations</span>
+                <h2 class="section-title">The Masterpiece Gallery</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bridal">Bridal</button>
+                <button class="filter-btn" data-filter="glam">Event Glam</button>
+                <button class="filter-btn" data-filter="creative">Photoshoots</button>
+                <button class="filter-btn" data-filter="lessons">Makeup Lessons</button>
+            </div>
+            <div class="gallery-grid" id="portfolio-gallery-grid">
+                <!-- Gallery Items with category tags -->
+                <div class="gallery-item-card" data-category="bridal">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/white_bridal.png" alt="Bridal Glam" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>White Wedding Bridal Glam</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/white_bridal.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="glam">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/dinner_glam.png" alt="Special Occasion" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Dinner Gala Glam</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/dinner_glam.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="creative">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/editorial.png" alt="Editorial Fashion" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Editorial High-Fashion</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/editorial.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="glam">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/natural.png" alt="Natural Glam" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Clean Natural Radiance</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/natural.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="lessons">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/group.png" alt="Group Makeup" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Group Makeup Sessions</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/group.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="bridal">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/traditional_bridal.png" alt="Traditional Bridal Glam" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Traditional Kente Bride</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/traditional_bridal.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="bridal">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/court_bridal.png" alt="Registry Civil Ceremony Glam" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Registry Court Wedding Glam</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/court_bridal.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="glam">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/birthday_glam.png" alt="Birthday Queen Glam" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Birthday Queen Glam</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/birthday_glam.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="glam">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/graduation.png" alt="Graduation Glam" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Graduation Radiant Glam</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/graduation.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="glam">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/corporate.png" alt="Corporate Professional Glam" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Corporate Professional Glam</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/corporate.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="lessons">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/masterclass.png" alt="Masterclass Artistry" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>Advanced Masterclass Artistry</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/masterclass.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-card" data-category="lessons">
+                    <div class="gallery-img-wrapper">
+                        <img src="assets/images/one_on_one.png" alt="One-on-One Class" class="gallery-img">
+                        <div class="gallery-card-overlay">
+                            <h4>One-on-One Artistry Class</h4>
+                            <button class="btn-zoom-gallery" data-img="assets/images/one_on_one.png"><i class="bi bi-search"></i> View</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View: About & Contact -->
+        <section id="view-about" class="page-view container">
+            <div class="about-hero">
+                <div class="about-hero-text">
+                    <span class="about-subtitle">Behind the Palette</span>
+                    <h2 class="about-title">About FG Makeovers</h2>
+                    <p>At FG Makeovers, we believe that makeup is not about masking who you are, but reflecting your unique inner glow. Our signature aesthetic balances luxurious textures with clean, flawless finishes.</p>
+                </div>
+                <div class="about-hero-img-wrapper">
+                    <img src="assets/images/group.png" alt="FG Makeovers Sessions" class="about-hero-img">
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <section class="contact-section">
+                <div class="contact-info-grid">
+                    <div class="contact-card">
+                        <i class="bi bi-telephone"></i>
+                        <h3>Call &amp; Consultation</h3>
+                        <p>0553923934<br>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="bi bi-envelope"></i>
+                        <h3>Email Inquiries</h3>
+                        <p>fgmakeovers@outlook.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <i class="bi bi-instagram"></i>
+                        <h3>Follow Us</h3>
+                        <p>@f_gmakeovers<br>(Instagram &amp; TikTok)</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- View: Bridal Packages -->
+        <section id="view-packages" class="page-view">
+
+            <!-- Packages Hero -->
+            <div class="packages-hero">
+                <div class="packages-hero-overlay"></div>
+                <div class="container packages-hero-content">
+                    <span class="hero-subtitle">For the Modern Bride</span>
+                    <h1 class="packages-hero-title">Bridal Packages</h1>
+                    <p class="packages-hero-tagline">Carefully crafted to accompany you through every stage of your wedding journey.</p>
+                </div>
+            </div>
+
+            <div class="container packages-content">
+
+                <!-- Bridal Trial & Consultation -->
+                <section class="trial-consultation-section">
+                    <div class="trial-consultation-card">
+                        <div class="trial-left">
+                            <div class="trial-icon-ring">💍</div>
+                            <div class="trial-price-tag">GH&#8373;1,000</div>
+                            <button class="btn btn-primary btn-book-trigger" data-id="1">Book Trial Session</button>
+                        </div>
+                        <div class="trial-text">
+                            <span class="section-subtitle">Begin Your Journey</span>
+                            <h2>Bridal Trial &amp; Consultation</h2>
+                            <p class="trial-lead">Every flawless bridal look begins with a thoughtful consultation. This exclusive session is dedicated to understanding your vision and curating a makeup look that enhances your natural beauty while reflecting your unique bridal style.</p>
+                            <p>Together, we will explore colours, finishes, and techniques best suited to your features, ensuring your wedding-day glam is both timeless and unforgettable. This trial allows us to perfect every detail in advance, giving you the confidence and peace of mind to fully enjoy your special day.</p>
+                            <p>By the end of the session, you will have a clear vision of your bridal look, knowing it has been carefully crafted to make you feel beautiful, confident, and truly yourself.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Bridal Packages Grid -->
+                <section class="bridal-packages-section">
+                    <div class="section-header">
+                        <span class="section-subtitle">Choose Your Experience</span>
+                        <h2 class="section-title">Bridal Packages</h2>
+                        <div class="section-divider"></div>
+                    </div>
+
+                    <div class="packages-grid">
+
+                        <!-- Dahlia Package -->
+                        <div class="package-card package-dahlia">
+                            <div class="package-flower">🌼</div>
+                            <div class="package-badge">Single Ceremony</div>
+                            <h3 class="package-name">Dahlia Package</h3>
+                            <p class="package-tagline">&#8220;Perfect for the bride who desires elegance for a single celebration.&#8221;</p>
+                            <div class="package-includes">
+                                <h4>Choose One:</h4>
+                                <ul>
+                                    <li><i class="bi bi-check2-circle"></i> Traditional Wedding</li>
+                                    <li><i class="bi bi-check2-circle"></i> Court Wedding</li>
+                                    <li><i class="bi bi-check2-circle"></i> White Wedding</li>
+                                </ul>
+                            </div>
+                            <div class="package-price">GH&#8373;1,500</div>
+                            <button class="btn btn-primary btn-book-trigger" data-id="16">Book This Package</button>
+                        </div>
+
+                        <!-- Iris Package -->
+                        <div class="package-card package-iris">
+                            <div class="package-flower">🌺</div>
+                            <div class="package-badge">Two-Day Wedding</div>
+                            <h3 class="package-name">Iris Package</h3>
+                            <p class="package-tagline">&#8220;Designed for brides celebrating love across two unforgettable days.&#8221;</p>
+                            <div class="package-includes">
+                                <h4>Includes:</h4>
+                                <ul>
+                                    <li><i class="bi bi-check2-circle"></i> Traditional Wedding</li>
+                                    <li><i class="bi bi-check2-circle"></i> White Wedding</li>
+                                    <li><i class="bi bi-info-circle"></i> On Separate Days</li>
+                                </ul>
+                            </div>
+                            <div class="package-price">GH&#8373;3,000</div>
+                            <button class="btn btn-primary btn-book-trigger" data-id="17">Book This Package</button>
+                        </div>
+
+                        <!-- Lily Package -->
+                        <div class="package-card package-lily">
+                            <div class="package-flower">🌸</div>
+                            <div class="package-badge">One-Day Wedding</div>
+                            <h3 class="package-name">Lily Package</h3>
+                            <p class="package-tagline">&#8220;For the bride embracing every moment of her wedding day journey.&#8221;</p>
+                            <div class="package-includes">
+                                <h4>Includes:</h4>
+                                <ul>
+                                    <li><i class="bi bi-check2-circle"></i> Traditional Wedding</li>
+                                    <li><i class="bi bi-check2-circle"></i> White Wedding</li>
+                                    <li><i class="bi bi-info-circle"></i> Both on the Same Day</li>
+                                    <li><i class="bi bi-clock"></i> Up to 4hr wait interval</li>
+                                </ul>
+                            </div>
+                            <div class="package-price">GH&#8373;3,500</div>
+                            <button class="btn btn-primary btn-book-trigger" data-id="18">Book This Package</button>
+                        </div>
+
+                        <!-- Daisy Package -->
+                        <div class="package-card package-daisy">
+                            <div class="package-flower">🌻</div>
+                            <div class="package-badge popular-badge">&#11088; Most Popular</div>
+                            <h3 class="package-name">Daisy Package</h3>
+                            <p class="package-tagline">&#8220;A seamless full-day beauty experience from ceremony to reception.&#8221;</p>
+                            <div class="package-includes">
+                                <h4>Includes:</h4>
+                                <ul>
+                                    <li><i class="bi bi-check2-circle"></i> Traditional Wedding</li>
+                                    <li><i class="bi bi-check2-circle"></i> White Wedding</li>
+                                    <li><i class="bi bi-check2-circle"></i> Reception</li>
+                                </ul>
+                            </div>
+                            <div class="package-price">GH&#8373;5,000</div>
+                            <button class="btn btn-primary btn-book-trigger" data-id="19">Book This Package</button>
+                        </div>
+
+                        <!-- Rose Package -->
+                        <div class="package-card package-rose">
+                            <div class="package-flower">🌹</div>
+                            <div class="package-badge signature-badge">&#10024; Signature Luxury</div>
+                            <h3 class="package-name">Rose Package</h3>
+                            <p class="package-tagline">&#8220;The ultimate bridal luxury experience.&#8221;</p>
+                            <div class="package-includes">
+                                <h4>Includes:</h4>
+                                <ul>
+                                    <li><i class="bi bi-check2-circle"></i> Bridal Trial Session</li>
+                                    <li><i class="bi bi-check2-circle"></i> Traditional Wedding &amp; Reception</li>
+                                    <li><i class="bi bi-check2-circle"></i> White Wedding &amp; Reception</li>
+                                    <li><i class="bi bi-check2-circle"></i> Thanksgiving Service</li>
+                                </ul>
+                            </div>
+                            <div class="package-price">GH&#8373;6,500</div>
+                            <button class="btn btn-primary btn-book-trigger" data-id="20">Book This Package</button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Brides Outside Accra -->
+                <section class="outside-accra-section">
+                    <div class="outside-accra-card">
+                        <div class="outside-accra-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                        <div class="outside-accra-body">
+                            <h3>Brides Outside Accra</h3>
+                            <p>To ensure the highest quality of service and seamless logistics, bookings outside Accra are available for the following packages only:</p>
+                            <div class="outside-packages-tags">
+                                <span class="outside-tag">🌺 Iris Package</span>
+                                <span class="outside-tag">🌻 Daisy Package</span>
+                                <span class="outside-tag">🌹 Rose Package</span>
+                            </div>
+                            <p class="outside-note"><i class="bi bi-info-circle"></i> A travel fee of <strong>GH&#8373;500</strong> applies to all bookings outside Accra. Travel and accommodation requirements will be discussed based on event location and package selected.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Terms & Conditions -->
+                <section class="terms-section">
+                    <div class="section-header">
+                        <span class="section-subtitle">Please Read Carefully</span>
+                        <h2 class="section-title">Terms &amp; Conditions</h2>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="terms-accordion" id="terms-accordion">
+                        <div class="terms-item">
+                            <button class="terms-trigger" data-target="terms-1"><span><i class="bi bi-credit-card"></i> Booking &amp; Payment Policy</span><i class="bi bi-chevron-down terms-chevron"></i></button>
+                            <div class="terms-body" id="terms-1">
+                                <p>A booking is only confirmed upon receipt of a <strong>50% non-refundable retainer fee</strong>. The retainer secures your wedding date and is deducted from the total package cost.</p>
+                                <p>The remaining <strong>50% balance</strong> must be paid no later than <strong>14 days before the wedding date</strong>.</p>
+                                <p>Please note that dates are allocated on a first-come, first-served basis and cannot be reserved without payment. Payment confirms acceptance of these Terms &amp; Conditions.</p>
+                            </div>
+                        </div>
+                        <div class="terms-item">
+                            <button class="terms-trigger" data-target="terms-2"><span><i class="bi bi-arrow-counterclockwise"></i> Cancellation &amp; Rescheduling</span><i class="bi bi-chevron-down terms-chevron"></i></button>
+                            <div class="terms-body" id="terms-2">
+                                <p>All retainer fees are <strong>strictly non-refundable</strong>. Should the client cancel for any reason, payments already made will not be refunded.</p>
+                                <p>Requests to reschedule are subject to availability. If the new date is unavailable, the booking will be treated as a cancellation and the retainer forfeited.</p>
+                                <p>Changes to the wedding location, start time, or event schedule that significantly affect the agreed service may attract additional charges.</p>
+                            </div>
+                        </div>
+                        <div class="terms-item">
+                            <button class="terms-trigger" data-target="terms-3"><span><i class="bi bi-airplane"></i> Travel &amp; Accommodation</span><i class="bi bi-chevron-down terms-chevron"></i></button>
+                            <div class="terms-body" id="terms-3">
+                                <p>For events outside Accra, the client is responsible for agreed travel expenses, accommodation (where necessary), and meals for the artist.</p>
+                                <p>A <strong>travel fee of GH&#8373;500</strong> applies to all bookings outside Accra. For destinations requiring air travel, round-trip flight arrangements must be provided for the artist and, where applicable, an assistant.</p>
+                                <p>All travel arrangements must be finalised prior to the event date.</p>
+                            </div>
+                        </div>
+                        <div class="terms-item">
+                            <button class="terms-trigger" data-target="terms-4"><span><i class="bi bi-lamp"></i> Bridal Preparation Space</span><i class="bi bi-chevron-down terms-chevron"></i></button>
+                            <div class="terms-body" id="terms-4">
+                                <p>To ensure a smooth experience, the client shall provide: a clean well-lit workspace, a table or suitable surface for makeup setup, adequate ventilation or air conditioning where possible, and access to a power source if required.</p>
+                                <p>To minimise distractions, only essential persons should be present in the preparation area.</p>
+                            </div>
+                        </div>
+                        <div class="terms-item">
+                            <button class="terms-trigger" data-target="terms-5"><span><i class="bi bi-clock"></i> Timeliness</span><i class="bi bi-chevron-down terms-chevron"></i></button>
+                            <div class="terms-body" id="terms-5">
+                                <p>The client agrees to be ready at the scheduled start time. Delays caused by the client, bridal party, or other vendors may affect the service schedule and final results.</p>
+                                <p>Where significant delays occur, additional waiting charges may apply.</p>
+                            </div>
+                        </div>
+                        <div class="terms-item">
+                            <button class="terms-trigger" data-target="terms-6"><span><i class="bi bi-camera"></i> Photography &amp; Marketing</span><i class="bi bi-chevron-down terms-chevron"></i></button>
+                            <div class="terms-body" id="terms-6">
+                                <p>F_G Makeovers reserves the right to photograph and share images or videos of completed makeup work for portfolio, website, and social media purposes.</p>
+                                <p>If the client prefers their images not to be used, this must be communicated in writing before the event date.</p>
+                            </div>
+                        </div>
+                        <div class="terms-item">
+                            <button class="terms-trigger" data-target="terms-7"><span><i class="bi bi-shield-check"></i> Liability</span><i class="bi bi-chevron-down terms-chevron"></i></button>
+                            <div class="terms-body" id="terms-7">
+                                <p>While every effort is made to ensure the highest standards of hygiene and product quality, F_G Makeovers shall not be held liable for allergic reactions or sensitivities where such conditions have not been disclosed prior to service.</p>
+                                <p>Clients are encouraged to communicate any allergies, sensitivities, or skin concerns during the consultation process.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Booking Information -->
+                <section class="booking-info-section">
+                    <div class="section-header">
+                        <span class="section-subtitle">Ready to Begin?</span>
+                        <h2 class="section-title">Secure Your Date</h2>
+                        <div class="section-divider"></div>
+                    </div>
+                    <div class="booking-info-grid">
+                        <div class="booking-info-card momo-card">
+                            <div class="booking-info-icon"><i class="bi bi-phone-fill"></i></div>
+                            <h3>Mobile Money Payment</h3>
+                            <div class="momo-details">
+                                <div class="momo-row"><span>Name</span><strong>Grace Omari Asante</strong></div>
+                                <div class="momo-row"><span>Number</span><strong>0553923935</strong></div>
+                            </div>
+                            <p class="momo-note">Send your 50% retainer to secure your wedding date. Please include your name and wedding date as reference.</p>
+                        </div>
+                        <div class="booking-info-card contact-card-pkg">
+                            <div class="booking-info-icon"><i class="bi bi-chat-heart-fill"></i></div>
+                            <h3>Get in Touch</h3>
+                            <div class="contact-details-list">
+                                <a href="tel:0553923934" class="contact-detail-item"><i class="bi bi-telephone-fill"></i><span>0553923934</span></a>
+                                <a href="mailto:fgmakeovers@outlook.com" class="contact-detail-item"><i class="bi bi-envelope-fill"></i><span>fgmakeovers@outlook.com</span></a>
+                                <a href="https://instagram.com/f_gmakeovers" target="_blank" class="contact-detail-item"><i class="bi bi-instagram"></i><span>@f_gmakeovers</span></a>
+                                <a href="https://tiktok.com/@f_gmakeovers" target="_blank" class="contact-detail-item"><i class="bi bi-tiktok"></i><span>@f_gmakeovers</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="packages-closing">
+                        <p>Thank you for considering F_G Makeovers to be part of your special day.</p>
+                        <p>We look forward to creating a bridal experience that is <em>seamless, memorable, and uniquely tailored to you.</em></p>
+                        <p class="packages-closing-brand">F_G Makeovers &mdash; <em>Flawless. Gorgeous. You.</em> &#10024;</p>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/logo.jpg" alt="FG Makeovers Logo" class="footer-logo">
+                <p>Flawless. Gorgeous. You.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/f_gmakeovers" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="https://tiktok.com/@f_gmakeovers" target="_blank" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/services">Services Menu</a></li>
+                    <li><a href="#/packages">Bridal Packages</a></li>
+                    <li><a href="#/gallery">Portfolio Gallery</a></li>
+                    <li><a href="#/about">About &amp; Studio</a></li>
+                </ul>
+            </div>
+            <div class="footer-bookings">
+                <h4>Book Your Session</h4>
+                <p>We recommend booking at least 2 weeks in advance for special events and 3 months in advance for weddings.</p>
+                <button class="btn btn-primary btn-book-trigger">Book Appointment Now</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FG Makeovers. All Rights Reserved. Designed with passion.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Booking Modal (Slide-Over Panel) -->
+    <div class="booking-modal-overlay" id="booking-modal">
+        <div class="booking-modal-content">
+            <button class="modal-close-btn" id="booking-modal-close" aria-label="Close Booking Panel">
+                <i class="bi bi-x-lg"></i>
+            </button>
+            
+            <div class="booking-modal-header">
+                <h2>Schedule Your Session</h2>
+                <p>Secure your makeup slot in just a few clicks.</p>
+            </div>
+            
+            <form id="booking-form" class="booking-form">
+                <!-- Step 1: Select Service -->
+                <div class="form-group">
+                    <label for="booking-service-select">Select Makeup Service</label>
+                    <select id="booking-service-select" class="form-control" required>
+                        <option value="" disabled selected>Choose a service...</option>
+                        <!-- Service options populated dynamically -->
+                    </select>
+                </div>
+                
+                <!-- Step 2: Select Date (Custom Calendar) -->
+                <div class="form-group">
+                    <label>Select Date</label>
+                    <div class="custom-calendar-container">
+                        <div class="calendar-header">
+                            <button type="button" id="prev-month-btn" class="calendar-nav-btn"><i class="bi bi-chevron-left"></i></button>
+                            <span id="calendar-month-year">June 2026</span>
+                            <button type="button" id="next-month-btn" class="calendar-nav-btn"><i class="bi bi-chevron-right"></i></button>
+                        </div>
+                        <div class="calendar-weekdays">
+                            <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+                        </div>
+                        <div class="calendar-days" id="calendar-days-grid">
+                            <!-- Days populated dynamically by JS -->
+                        </div>
+                    </div>
+                    <input type="hidden" id="selected-date-input" required>
+                </div>
+                
+                <!-- Step 3: Select Time Slot -->
+                <div class="form-group">
+                    <label>Available Time Slots</label>
+                    <div class="time-slots-grid" id="time-slots-grid">
+                        <p class="select-date-message">Please select a date to view available time slots.</p>
+                    </div>
+                    <input type="hidden" id="selected-time-input" required>
+                </div>
+                
+                <!-- Step 4: Contact Details -->
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="client-name">Your Full Name</label>
+                        <input type="text" id="client-name" class="form-control" placeholder="e.g., Jane Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-email">Email Address</label>
+                        <input type="email" id="client-email" class="form-control" placeholder="jane@example.com" required>
+                    </div>
+                </div>
+                
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="client-phone">Phone Number</label>
+                        <input type="tel" id="client-phone" class="form-control" placeholder="+233 50 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="client-notes">Special Requests / Skin Type Notes</label>
+                        <input type="text" id="client-notes" class="form-control" placeholder="e.g., Dry skin, prefers warm gold eyes...">
+                    </div>
+                </div>
+                
+                <div class="booking-summary-box" id="booking-summary-box" style="display: none;">
+                    <h3>Booking Summary</h3>
+                    <div class="summary-details">
+                        <p><strong>Service:</strong> <span id="summary-service">-</span></p>
+                        <p><strong>Date & Time:</strong> <span id="summary-datetime">-</span></p>
+                        <p><strong>Price:</strong> <span id="summary-price">-</span></p>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block" id="btn-submit-booking" disabled>Confirm Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Success Modal -->
+    <div class="popup-modal-overlay" id="success-modal">
+        <div class="popup-modal-content">
+            <div class="success-icon-wrapper">
+                <i class="bi bi-check2-circle animate-checkmark"></i>
+            </div>
+            <h2>Appointment Confirmed!</h2>
+            <p>Your makeup session has been successfully booked with FG Makeovers.</p>
+            
+            <div class="confirmation-ticket">
+                <div class="ticket-row">
+                    <span>Reference Code:</span>
+                    <strong id="ticket-ref">#FG-1082</strong>
+                </div>
+                <div class="ticket-row">
+                    <span>Service:</span>
+                    <strong id="ticket-service">Bridal Glam</strong>
+                </div>
+                <div class="ticket-row">
+                    <span>Date & Time:</span>
+                    <strong id="ticket-datetime">June 28, 2026 at 10:30 AM</strong>
+                </div>
+                <div class="ticket-row">
+                    <span>Location:</span>
+                    <strong>12 Digya Lane, Airport Residential, Accra</strong>
+                </div>
+            </div>
+            
+            <div class="success-actions">
+                <button class="btn btn-primary" id="btn-download-ics"><i class="bi bi-calendar-event"></i> Add to Calendar</button>
+                <button class="btn btn-outline" id="btn-success-close">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Image Zoom Modal -->
+    <div class="lightbox-overlay" id="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox"><i class="bi bi-x-lg"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="Zoomed Portfolio Work" class="lightbox-img" id="lightbox-img">
+            <span class="lightbox-caption" id="lightbox-caption">FG Makeovers Creation</span>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Progress Button -->
+    <div class="progress-wrap" id="progress-scroll">
+        <svg class="progress-circle" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" id="progress-path"/>
+        </svg>
+        <div class="arrow-up-icon"><i class="bi bi-arrow-up-short"></i></div>
+    </div>
+
+    <!-- Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
