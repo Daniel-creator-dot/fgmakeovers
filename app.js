@@ -454,6 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const successModal = document.getElementById('success-modal');
     const successModalClose = document.getElementById('btn-success-close');
     const downloadIcsBtn = document.getElementById('btn-download-ics');
+    const sendWhatsappBtn = document.getElementById('btn-send-whatsapp');
     const ticketRef = document.getElementById('ticket-ref');
     const ticketService = document.getElementById('ticket-service');
     const ticketDateTime = document.getElementById('ticket-datetime');
@@ -974,6 +975,34 @@ document.addEventListener('DOMContentLoaded', () => {
             ticketRef.textContent = `#${refCode}`;
             ticketService.textContent = serviceObj.title;
             ticketDateTime.textContent = `${formattedDate} at ${timeVal}`;
+            
+            // Generate WhatsApp link and update the button
+            const whatsappNumber = "233553923935";
+            const messageText = `Hi FG Makeovers! I would like to confirm my makeup appointment:
+
+*Reference:* #${refCode}
+*Service:* ${serviceObj.title}
+*Price:* GHS ${serviceObj.price}
+*Date:* ${formattedDate}
+*Time:* ${timeVal}
+
+*My Details:*
+*Name:* ${clientName}
+*Phone:* ${clientPhone}
+*Email:* ${clientEmail}
+*Notes:* ${clientNotes || 'None'}
+
+Please confirm my booking!`;
+
+            const encodedMessage = encodeURIComponent(messageText);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            if (sendWhatsappBtn) {
+                sendWhatsappBtn.href = whatsappUrl;
+            }
+            
+            // Automatically try to open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
             
             // Open Success Popup
             successModal.classList.add('active');
