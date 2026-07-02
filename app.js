@@ -4,6 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- 0. Admin Configuration ---
+    // Change this to the published CSV URL of the owner's Google Sheet
+    // Structure of Google Sheet: Column A contains dates to block in YYYY-MM-DD format (e.g. 2026-07-25)
+    const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6Y3N5h6H80m4m-5U34n7W2c4H0Z4Yh6vY8_W4e2H0Z4Yh6vY8_W4e2H0Z4Yh6vY8_W4e/pub?output=csv";
+
     // --- 1. Service Data ---
     const services = [
         // --- Bridal Services ---
@@ -409,6 +414,32 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentYear = new Date().getFullYear();
     const mockBookedSlots = JSON.parse(localStorage.getItem('fg_makeovers_bookings')) || [];
 
+    // Google Sheets Blocked Dates (loaded dynamically)
+    let googleBlockedDates = [];
+    
+    function fetchBlockedDates() {
+        if (!GOOGLE_SHEET_CSV_URL || GOOGLE_SHEET_CSV_URL.includes("YOUR_SHEET_ID_HERE") || GOOGLE_SHEET_CSV_URL.includes("YOUR_PUBLISHED_ID")) {
+            return Promise.resolve([]);
+        }
+        return fetch(GOOGLE_SHEET_CSV_URL)
+            .then(res => {
+                if (!res.ok) throw new Error("Network response was not ok");
+                return res.text();
+            })
+            .then(csvText => {
+                // Split by newlines and match YYYY-MM-DD
+                const dates = csvText.split(/\r?\n/)
+                    .map(line => line.trim())
+                    .filter(line => /^\d{4}-\d{2}-\d{2}$/.test(line));
+                googleBlockedDates = dates;
+                return dates;
+            })
+            .catch(err => {
+                console.error("Failed to load blocked dates from Google Sheets:", err);
+                return [];
+            });
+    }
+
     // --- 3. DOM Cache ---
     const appView = document.getElementById('app-view');
     const views = {
@@ -806,10 +837,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const cellDate = new Date(currentYear, currentMonth, day);
             cellDate.setHours(0,0,0,0);
             
-            // Check if day is in the past
-            if (cellDate < today) {
+            const yearStr = cellDate.getFullYear();
+            const monthStr = String(cellDate.getMonth() + 1).padStart(2, '0');
+            const dayStr = String(cellDate.getDate()).padStart(2, '0');
+            const dateKey = `${yearStr}-${monthStr}-${dayStr}`;
+            const isDateBlocked = googleBlockedDates.includes(dateKey);
+            
+            // Define minimum date based on service selection
+            let minSelectableDate = new Date(today);
+            const serviceId = parseInt(serviceSelect.value);
+            const serviceObj = services.find(s => s.id === serviceId);
+            const isBridal = serviceObj && (serviceObj.category === 'bridal' || serviceObj.category === 'packages');
+            
+            if (isBridal) {
+                // Must book at least 90 days (3 months) in advance
+                minSelectableDate.setDate(today.getDate() + 90);
+            }
+            
+            // Check if day is in the past, less than the minimum selectable date, or blocked in Google Sheets
+            if (cellDate < minSelectableDate || isDateBlocked) {
                 dayCell.classList.add('disabled');
                 dayCell.disabled = true;
+                if (isDateBlocked) {
+                    dayCell.title = "Date Unavailable";
+                } else if (isBridal && cellDate >= today && cellDate < minSelectableDate) {
+                    dayCell.title = "Bridal bookings require 3 months advance notice";
+                }
             } else {
                 dayCell.classList.add('active-day');
                 
@@ -1161,6 +1214,32 @@ Please confirm my booking!`;
     if (serviceSelect) {
         serviceSelect.addEventListener('change', () => {
             updateBookingSummary();
+            
+            // Validate selected date against bridal rules if date is selected
+            if (currentSelectedDate) {
+                const today = new Date();
+                today.setHours(0,0,0,0);
+                let minSelectableDate = new Date(today);
+                const serviceId = parseInt(serviceSelect.value);
+                const serviceObj = services.find(s => s.id === serviceId);
+                const isBridal = serviceObj && (serviceObj.category === 'bridal' || serviceObj.category === 'packages');
+                
+                if (isBridal) {
+                    minSelectableDate.setDate(today.getDate() + 90);
+                }
+                
+                if (currentSelectedDate < minSelectableDate) {
+                    // Selected date is now invalid, clear it
+                    currentSelectedDate = null;
+                    selectedDateInput.value = '';
+                    selectedTimeInput.value = '';
+                    timeSlotsGrid.innerHTML = '<p class="select-date-message">Please select a date on the calendar.</p>';
+                    updateBookingSummary();
+                }
+            }
+            
+            renderCalendar(); // Re-render calendar to reflect correct disabled states
+            
             if (currentSelectedDate) {
                 generateTimeSlots(currentSelectedDate);
             }
@@ -1350,4 +1429,9 @@ Please confirm my booking!`;
     // Initial router check
     handleRouting();
 
+    // Fetch Google Sheets blocked dates
+    fetchBlockedDates().then(() => {
+        // Re-render calendar once dates are loaded to reflect disabled/blocked states
+        renderCalendar();
+    });
 });
