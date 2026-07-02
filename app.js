@@ -845,25 +845,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const dateKey = `${yearStr}-${monthStr}-${dayStr}`;
             const isDateBlocked = googleBlockedDates.includes(dateKey);
             
-            // Define minimum date based on service selection
-            let minSelectableDate = new Date(today);
-            const serviceId = parseInt(serviceSelect.value);
-            const serviceObj = services.find(s => s.id === serviceId);
-            const isBridal = serviceObj && (serviceObj.category === 'bridal' || serviceObj.category === 'packages');
-            
-            if (isBridal) {
-                // Must book at least 90 days (3 months) in advance
-                minSelectableDate.setDate(today.getDate() + 90);
-            }
-            
-            // Check if day is in the past, less than the minimum selectable date, or blocked in Google Sheets
-            if (cellDate < minSelectableDate || isDateBlocked) {
+            // Check if day is in the past or blocked in Google Sheets
+            if (cellDate < today || isDateBlocked) {
                 dayCell.classList.add('disabled');
                 dayCell.disabled = true;
                 if (isDateBlocked) {
                     dayCell.title = "Date Unavailable";
-                } else if (isBridal && cellDate >= today && cellDate < minSelectableDate) {
-                    dayCell.title = "Bridal bookings require 3 months advance notice";
                 }
             } else {
                 dayCell.classList.add('active-day');
@@ -1216,32 +1203,7 @@ Please confirm my booking!`;
     if (serviceSelect) {
         serviceSelect.addEventListener('change', () => {
             updateBookingSummary();
-            
-            // Validate selected date against bridal rules if date is selected
-            if (currentSelectedDate) {
-                const today = new Date();
-                today.setHours(0,0,0,0);
-                let minSelectableDate = new Date(today);
-                const serviceId = parseInt(serviceSelect.value);
-                const serviceObj = services.find(s => s.id === serviceId);
-                const isBridal = serviceObj && (serviceObj.category === 'bridal' || serviceObj.category === 'packages');
-                
-                if (isBridal) {
-                    minSelectableDate.setDate(today.getDate() + 90);
-                }
-                
-                if (currentSelectedDate < minSelectableDate) {
-                    // Selected date is now invalid, clear it
-                    currentSelectedDate = null;
-                    selectedDateInput.value = '';
-                    selectedTimeInput.value = '';
-                    timeSlotsGrid.innerHTML = '<p class="select-date-message">Please select a date on the calendar.</p>';
-                    updateBookingSummary();
-                }
-            }
-            
             renderCalendar(); // Re-render calendar to reflect correct disabled states
-            
             if (currentSelectedDate) {
                 generateTimeSlots(currentSelectedDate);
             }
