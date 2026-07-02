@@ -314,9 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
             highlights: [
                 "Interactive live demonstration",
                 "Hands-on practice with artist guidance",
-                "Q&A session on skincare & tools",
-                "Goodie bag with essential tools",
-                "Champagne & refreshments included"
+                "Q&A session on skincare & tools"
             ]
         },
         {
@@ -344,60 +342,60 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- Bridal Packages ---
         {
             id: 16,
-            title: "Dahlia Package (Bridal Package)",
+            title: "Single Ceremony Package",
             price: 1500,
             duration: 120,
             category: "packages",
             shortDesc: "Perfect for the bride who desires elegance for a single celebration.",
-            longDesc: "Dahlia Package - Single Ceremony Bridal Makeup (choose from Traditional, Court, or White Wedding). Price: GH₵1,500 GHS.",
+            longDesc: "Single Ceremony Bridal Makeup (choose from Traditional, Court, or White Wedding). Price: GH₵1,500 GHS.",
             image: "assets/images/white_bridal.png",
             gallery: ["assets/images/white_bridal.png", "assets/images/traditional_bridal.png", "assets/images/court_bridal.png"],
             highlights: ["Traditional, Court, or White Wedding", "Premium long-wear makeup", "Includes lashes & touch-up kit"]
         },
         {
             id: 17,
-            title: "Iris Package (Bridal Package)",
+            title: "Two-Day Wedding Package",
             price: 3000,
             duration: 120,
             category: "packages",
             shortDesc: "Designed for brides celebrating love across two unforgettable days.",
-            longDesc: "Iris Package - Two-Day Wedding Bridal Makeup (includes both Traditional and White Wedding on separate days). Price: GH₵3,000 GHS.",
+            longDesc: "Two-Day Wedding Bridal Makeup (includes both Traditional and White Wedding on separate days). Price: GH₵3,000 GHS.",
             image: "assets/images/traditional_bridal.png",
             gallery: ["assets/images/traditional_bridal.png", "assets/images/white_bridal.png"],
             highlights: ["Traditional Wedding Makeup", "White Wedding Makeup", "On separate days", "Includes lashes & touch-up kits"]
         },
         {
             id: 18,
-            title: "Lily Package (Bridal Package)",
+            title: "One-Day Wedding Package",
             price: 3500,
             duration: 180,
             category: "packages",
             shortDesc: "For the bride embracing every moment of her wedding day journey.",
-            longDesc: "Lily Package - One-Day Wedding Bridal Makeup (includes both Traditional and White Wedding on the same day with up to 4hr wait interval). Price: GH₵3,500 GHS.",
+            longDesc: "One-Day Wedding Bridal Makeup (includes both Traditional and White Wedding on the same day with up to 4hr wait interval). Price: GH₵3,500 GHS.",
             image: "assets/images/white_bridal.png",
             gallery: ["assets/images/white_bridal.png", "assets/images/traditional_bridal.png"],
             highlights: ["Traditional & White Wedding on same day", "Up to 4-hour wait interval between looks", "Includes lashes & touch-up kits"]
         },
         {
             id: 19,
-            title: "Daisy Package (Bridal Package)",
+            title: "Full-Day Wedding Package",
             price: 5000,
             duration: 180,
             category: "packages",
             shortDesc: "A seamless full-day beauty experience from ceremony to reception.",
-            longDesc: "Daisy Package - Full-Day Wedding Bridal Makeup (includes Traditional Wedding, White Wedding, and Reception transition makeup). Price: GH₵5,000 GHS.",
+            longDesc: "Full-Day Wedding Bridal Makeup (includes Traditional Wedding, White Wedding, and Reception transition makeup). Price: GH₵5,000 GHS.",
             image: "assets/images/birthday_glam.png",
             gallery: ["assets/images/white_bridal.png", "assets/images/traditional_bridal.png", "assets/images/birthday_glam.png"],
             highlights: ["Traditional Wedding Makeup", "White Wedding Makeup", "Reception transition / second look", "Includes lashes & touch-up kits"]
         },
         {
             id: 20,
-            title: "Rose Package (Bridal Package)",
+            title: "Luxury Bridal Package",
             price: 6500,
             duration: 240,
             category: "packages",
             shortDesc: "The ultimate bridal luxury experience.",
-            longDesc: "Rose Package - Ultimate Luxury Bridal Makeup (includes Bridal Trial Session, Traditional Wedding & Reception, White Wedding & Reception, and Thanksgiving Service makeup). Price: GH₵6,500 GHS.",
+            longDesc: "Luxury Bridal Package - Ultimate Bridal Makeup (includes Bridal Trial Session, Traditional Wedding & Reception, White Wedding & Reception, and Thanksgiving Service makeup). Price: GH₵6,500 GHS.",
             image: "assets/images/white_bridal.png",
             gallery: ["assets/images/white_bridal.png", "assets/images/traditional_bridal.png", "assets/images/birthday_glam.png", "assets/images/natural.png"],
             highlights: ["Bridal Trial & Consultation", "Traditional Wedding & Reception", "White Wedding & Reception", "Thanksgiving Service Makeup"]
@@ -480,7 +478,7 @@ document.addEventListener('DOMContentLoaded', () => {
             homeServicesContainer.innerHTML = '';
             const featuredServiceIds = [2, 8, 7, 14]; // White Wedding, Photoshoot, Birthday Glam, Group Classes
             services.filter(s => featuredServiceIds.includes(s.id)).forEach(service => {
-                homeServicesContainer.appendChild(createServiceCard(service));
+                homeServicesContainer.appendChild(createServiceCard(service, true)); // hidePrice=true on home page
             });
         }
 
@@ -532,13 +530,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    function createServiceCard(service) {
+    function createServiceCard(service, hidePrice = false) {
         const card = document.createElement('div');
         card.className = 'service-card';
         card.innerHTML = `
             <div class="service-img-wrapper">
                 <img src="${service.image}" alt="${service.title}" class="service-img" loading="lazy">
-                <span class="service-price-tag">GH₵${service.price}</span>
+                ${hidePrice ? '' : `<span class="service-price-tag">GH₵${service.price}</span>`}
             </div>
             <div class="service-details">
                 <div class="service-meta">
@@ -718,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="info-row">
                                 <span>Location</span>
-                                <strong>Airport Residential, Accra</strong>
+                                <strong>Mataheko, Accra</strong>
                             </div>
                         </div>
                         
@@ -1070,7 +1068,7 @@ Please confirm my booking!`;
             `DTEND:${endDateTime}`,
             `SUMMARY:FG Makeovers - ${booking.serviceTitle}`,
             `DESCRIPTION:Hi ${booking.clientName},\\n\\nYour makeup appointment is confirmed!\\nService: ${booking.serviceTitle}\\nReference: #${booking.ref}\\nNotes: ${booking.notes || 'None'}\\n\\nSee you at the studio!`,
-            "LOCATION:12 Digya Lane, Airport Residential Area, Accra, Ghana",
+            "LOCATION:Mataheko, Accra, Ghana",
             "STATUS:CONFIRMED",
             "SEQUENCE:0",
             "END:VEVENT",
