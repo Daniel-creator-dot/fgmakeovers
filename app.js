@@ -508,7 +508,7 @@ document.addEventListener('DOMContentLoaded', () => {
             homeServicesContainer.innerHTML = '';
             const featuredServiceIds = [2, 8, 7, 14]; // White Wedding, Photoshoot, Birthday Glam, Group Classes
             services.filter(s => featuredServiceIds.includes(s.id)).forEach(service => {
-                homeServicesContainer.appendChild(createServiceCard(service, true)); // hidePrice=true on home page
+                homeServicesContainer.appendChild(createServiceCard(service, true, true)); // hidePrice=true, hideBookBtn=true on home page
             });
         }
 
@@ -560,7 +560,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    function createServiceCard(service, hidePrice = false) {
+    function createServiceCard(service, hidePrice = false, hideBookBtn = false) {
         const card = document.createElement('div');
         card.className = 'service-card';
         card.innerHTML = `
@@ -577,17 +577,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>${service.shortDesc}</p>
                 <div class="service-actions">
                     <a href="#/service/${service.id}" class="btn btn-outline">Details</a>
-                    <button class="btn btn-primary btn-book-service" data-id="${service.id}">Book Now</button>
+                    ${hideBookBtn ? '' : `<button class="btn btn-primary btn-book-service" data-id="${service.id}">Book Now</button>`}
                 </div>
             </div>
         `;
         
-        // Add event listener to Book Now button inside the card
-        card.querySelector('.btn-book-service').addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            openBookingWithService(service.id);
-        });
+        // Add event listener to Book Now button inside the card (if present)
+        const bookBtn = card.querySelector('.btn-book-service');
+        if (bookBtn) {
+            bookBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openBookingWithService(service.id);
+            });
+        }
         
         return card;
     }
