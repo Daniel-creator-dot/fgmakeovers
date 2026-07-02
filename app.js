@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 0. Admin Configuration ---
     // Change this to the published CSV URL of the owner's Google Sheet
-    // Structure of Google Sheet: Column A contains dates to block in YYYY-MM-DD format (e.g. 2026-07-25)
-    const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vR6Y3N5h6H80m4m-5U34n7W2c4H0Z4Yh6vY8_W4e2H0Z4Yh6vY8_W4e2H0Z4Yh6vY8_W4e/pub?output=csv";
+    const GOOGLE_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1JvqTnv_9l3kB5el5gdpfjx-EyjYLd4icfijNrAPuSo0/export?format=csv";
 
     // --- 1. Service Data ---
     const services = [
